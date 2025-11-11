@@ -26,4 +26,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: benjaminrielli/holamundo
+          tags: benjaminrielli2001/holamundo
