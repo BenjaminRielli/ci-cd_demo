@@ -1,6 +1,8 @@
 name: Workflow ej1
 
-on: push
+on: 
+  push: 
+    branches: [ main ]
 
 jobs:
   validar:
@@ -14,4 +16,4 @@ jobs:
         run: pip install pytest
 
       - name: Ejecutar pytest
-        run: pytest test.py
+        run: pytest main.py
