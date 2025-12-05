@@ -1,0 +1,25 @@
+name: advanced-security/python-lint-code-scanning-action@v1
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# Bloque 'permissions' al mismo nivel que 'on' y 'jobs'
+permissions:
+  # Clave-valor 'security-events: write' indentado correctamente (2 espacios)
+  security-events: write 
+
+jobs:
+  lint_code:
+    runs-on: ubuntu-latest 
+    
+    steps:
+    - name: Checkout del código
+      uses: actions/checkout@v4
+
+    - name: Análisis de Código con Pylint
+      uses: advanced-security/python-lint-code-scanning-action@v1
+      with:
+        linter: pylint
